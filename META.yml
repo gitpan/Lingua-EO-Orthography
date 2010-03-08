@@ -1,0 +1,40 @@
+---
+abstract: 'A converter of notations (orthography and substitute notations) for Esperanto characters'
+author:
+  - 'MORIYA Masaki, alias Gardejo <moriya at cpan dot org>'
+build_requires:
+  ExtUtils::MakeMaker: 6.42
+  Module::Install: 0.80
+  Module::Load: 0
+  Test::Class: 0
+  Test::Exception: 0.27
+  Test::More: 0
+  Test::Requires: 0
+  Test::Warn: 0
+configure_requires:
+  ExtUtils::MakeMaker: 6.42
+distribution_type: module
+generated_by: 'Module::Install version 0.94'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+module_name: Lingua::EO::Orthography
+name: Lingua-EO-Orthography
+no_index:
+  directory:
+    - examples
+    - inc
+    - t
+    - xt
+requires:
+  Data::Util: 0
+  List::MoreUtils: 0
+  Regexp::Assemble: 0
+  Try::Tiny: 0
+  perl: 5.8.1
+resources:
+  homepage: http://github.com/gardejo/p5-lingua-eo-notation
+  license: http://dev.perl.org/licenses/
+  repository: git://github.com/gardejo/p5-lingua-eo-notation.git
+version: 0.00
