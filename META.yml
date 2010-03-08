@@ -34,7 +34,7 @@ requires:
   Try::Tiny: 0
   perl: 5.8.1
 resources:
-  homepage: http://github.com/gardejo/p5-lingua-eo-notation
+  homepage: http://github.com/gardejo/p5-lingua-eo-orthography
   license: http://dev.perl.org/licenses/
-  repository: git://github.com/gardejo/p5-lingua-eo-notation.git
-version: 0.00
+  repository: git://github.com/gardejo/p5-lingua-eo-orthography.git
+version: 0.01

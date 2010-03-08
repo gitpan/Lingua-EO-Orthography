@@ -15,13 +15,13 @@ use Module::Install::AuthorTests;
     author          'MORIYA Masaki, alias Gardejo <moriya at cpan dot org>';
     resources (
         repository
-            => 'git://github.com/gardejo/p5-lingua-eo-notation.git',
+            => 'git://github.com/gardejo/p5-lingua-eo-orthography.git',
         # (implicit assignment)
         # bugtracker
         #     => 'http://rt.cpan.org/Public/Dist/Display.html?Name='
         #      . 'Lingua-EO-Orthography',
         homepage
-            => 'http://github.com/gardejo/p5-lingua-eo-notation',
+            => 'http://github.com/gardejo/p5-lingua-eo-orthography',
     );
 
     no_index directory => 'examples';
@@ -74,7 +74,8 @@ use Module::Install::AuthorTests;
 # ================================================================
 # test(s)
 # ================================================================
-    tests_recursive 't';
+    tests           't/*.t';
+    author_tests    'xt';
 
 # ================================================================
 # installation
