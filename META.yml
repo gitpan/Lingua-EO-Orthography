@@ -1,12 +1,10 @@
 ---
-abstract: 'A converter of notations (orthography and substitute notations) for Esperanto characters'
+abstract: 'A orthography/substitute converter for Esperanto characters'
 author:
   - 'MORIYA Masaki, alias Gardejo <moriya at cpan dot org>'
 build_requires:
   ExtUtils::MakeMaker: 6.42
-  Module::Install: 0.80
-  Module::Load: 0
-  Test::Class: 0
+  Test::Class: 0.34
   Test::Exception: 0.27
   Test::More: 0
   Test::Requires: 0
@@ -14,7 +12,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.42
 distribution_type: module
-generated_by: 'Module::Install version 0.94'
+generated_by: 'Module::Install version 0.95'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -37,4 +35,4 @@ resources:
   homepage: http://github.com/gardejo/p5-lingua-eo-orthography
   license: http://dev.perl.org/licenses/
   repository: git://github.com/gardejo/p5-lingua-eo-orthography.git
-version: 0.01
+version: 0.02

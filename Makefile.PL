@@ -1,17 +1,11 @@
-use strict;
-use warnings;
-
-use inc::Module::Install 0.91;
+use inc::Module::Install 0.95;
 use Module::Install::AuthorRequires;
 use Module::Install::AuthorTests;
 
 # ================================================================
 # gathering meta information
 # ================================================================
-    # abstract, author, license, name, perl_version(5.008_001), version
-    all_from        'lib/Lingua/EO/Orthography.pm';
-
-    # supplements
+    # individual gathering
     author          'MORIYA Masaki, alias Gardejo <moriya at cpan dot org>';
     resources (
         repository
@@ -24,15 +18,19 @@ use Module::Install::AuthorTests;
             => 'http://github.com/gardejo/p5-lingua-eo-orthography',
     );
 
+    # the rest of information
+    # abstract, author, license, name, perl_version(5.008_001), version
+    all_from        'lib/Lingua/EO/Orthography.pm';
+
     no_index directory => 'examples';
 #   no_index directory => 'extlib';
 
 # ================================================================
 # build dependency(-ies)
 # ================================================================
-    build_requires  'Module::Install'                   => '0.80';
+#   build_requires  'Module::Install'                   => '0.80';
         # to avoid YAML::Tiny problem
-    build_requires  'Module::Load'                      => '0';
+#   build_requires  'Module::Load'                      => '0';
         # is in perl 5.009_004
 
 # ================================================================
@@ -50,7 +48,8 @@ use Module::Install::AuthorTests;
 # ================================================================
 # test dependency(-ies)
 # ================================================================
-    test_requires   'Test::Class'                       => '0';
+    test_requires   'Test::Class'                       => '0.34';
+        # to avoid Devel::Symdump
     test_requires   'Test::Exception'                   => '0.27';
         # cf. MooseX-Types-DateTime
     test_requires   'Test::More'                        => '0';
@@ -74,57 +73,22 @@ use Module::Install::AuthorTests;
 # ================================================================
 # test(s)
 # ================================================================
-    tests           't/*.t';
-    author_tests    'xt';
+    tests                   't/*.t';
+    recursive_author_tests  'xt';
+
+# ================================================================
+# including
+# ================================================================
+    auto_include_deps;
+    # 'auto_include' grabs only immediate dependencies
 
 # ================================================================
 # installation
 # ================================================================
-    auto_include;
-    auto_install;
+#   auto_install;
+    # 'auto_install' is deprecated
 
 # ================================================================
 # writter
 # ================================================================
     WriteAll;
-
-__END__
-
-
-# ****************************************************************
-# POD
-# ****************************************************************
-
-=pod
-
-=head1 NAME
-
-Makefile.PL - Makefile builder for Lingua-EO-Orthography
-
-=head1 SYNOPSIS
-
-    % cpan -t .
-
-=head1 AUTHOR
-
-=over 4
-
-=item MORIYA Masaki, alias Gardejo
-
-C<< <moriya at cpan dot org> >>,
-L<http://ttt.ermitejo.com/>
-
-=back
-
-=head1 COPYRIGHT AND LICENSE
-
-Copyright (c) 2010 MORIYA Masaki, alias Gardejo
-
-This distribution is free software;
-you can redistribute it and/or modify it under the same terms as Perl itself.
-See L<perlgpl|perlgpl> and L<perlartistic|perlartistic>.
-
-The full text of the license can be found in the F<LICENSE> file
-included with this distribution.
-
-=cut
